@@ -43,6 +43,7 @@ vgcreate droidian "${DEVICE}"
 echo "Creating LVs"
 lvcreate --zero n -L 128M -n droidian-persistent droidian
 lvcreate --zero n -L 32M -n droidian-reserved droidian
+lvcreate --zero n -L 1G -n droidian-urbackup droidian
 lvcreate --zero n -l 100%FREE -n droidian-rootfs droidian
 
 vgchange -ay droidian
